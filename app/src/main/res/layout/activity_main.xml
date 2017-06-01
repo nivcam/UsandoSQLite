@@ -63,7 +63,8 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textSize="10sp"
-            android:visibility="visible" />
+            android:visibility="visible"
+            tools:ignore="ButtonStyle,SmallSp" />
 
         <Button
             android:id="@+id/btalterar"
@@ -74,7 +75,8 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textSize="10sp"
-            android:visibility="visible" />
+            android:visibility="visible"
+            tools:ignore="SmallSp" />
 
         <Button
             android:id="@+id/btexcluir"
@@ -84,7 +86,8 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textSize="10sp"
-            android:visibility="visible" />
+            android:visibility="visible"
+            tools:ignore="ButtonStyle,SmallSp" />
 
         <Button
             android:id="@+id/btpesquisar"
@@ -94,7 +97,8 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textSize="10sp"
-            android:visibility="visible" />
+            android:visibility="visible"
+            tools:ignore="ButtonStyle,SmallSp" />
 
         <Button
             android:id="@+id/btlistar"
@@ -104,7 +108,8 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textSize="10sp"
-            android:visibility="visible" />
+            android:visibility="visible"
+            tools:ignore="ButtonStyle,SmallSp" />
 
     </LinearLayout>
 
