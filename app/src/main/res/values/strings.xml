@@ -6,7 +6,7 @@
     <string name="btincluir">Incluir</string>
     <string name="btalterar">Alterar</string>
     <string name="btexcluir">Excluir</string>
-    <string name="btpesquizar">Pesquisar</string>
+    <string name="btpesquisar">Pesquisar</string>
     <string name="btlistar">Listar</string>
     <string name="title_activity_lista">ListaActivity</string>
 </resources>

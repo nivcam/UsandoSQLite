@@ -87,10 +87,10 @@
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/btpesquizar"
+            android:id="@+id/btpesquisar"
             android:layout_width="70dp"
             android:layout_height="35dp"
-            android:text="@string/btpesquizar"
+            android:text="@string/btpesquisar"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textSize="10sp"
