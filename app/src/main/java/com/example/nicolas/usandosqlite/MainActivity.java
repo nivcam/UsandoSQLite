@@ -40,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btalterarOnClick(View v) {
+        int id = Integer.parseInt(etcodigo.getText().toString());
+        ContentValues registro = new ContentValues();
+        registro.put("nome_disciplina", etnome_disciplina.getText().toString());
+        registro.put("nota", Double.parseDouble(etnota.getText().toString()));
+        banco.update("notas", registro, "_id = " + id, null);
+        Toast.makeText(getApplicationContext(), "Sucesso!", Toast.LENGTH_SHORT).show();
 
     }
 
