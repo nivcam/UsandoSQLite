@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btexcluirOnClick(View v) {
+        int id = Integer.parseInt(etcodigo.getText().toString());
+        banco.delete("notas", "_id = " + id, null);
+        Toast.makeText(getApplicationContext(), "Sucesso!", Toast.LENGTH_SHORT).show();
 
     }
 
