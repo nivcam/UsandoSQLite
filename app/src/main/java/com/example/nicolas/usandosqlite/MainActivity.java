@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         registro.put("nota", Double.parseDouble(etnota.getText().toString()));
         banco.update("notas", registro, "_id = " + id, null);
         Toast.makeText(getApplicationContext(), "Sucesso!", Toast.LENGTH_SHORT).show();
+        /*oi*/
 
     }
 
