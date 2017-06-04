@@ -37,21 +37,70 @@ public class MainActivity extends AppCompatActivity {
         btincluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btincluirOnClick(v);
-            }
-        });
+
+                    if (etnome_disciplina.getText().toString().equals("")) {
+                        AlertDialog.Builder mensagem = new AlertDialog.Builder(MainActivity.this);
+                        mensagem.setTitle("Atenção");
+                        mensagem.setMessage("O nome da disciplina deve ser preenchido");
+                        mensagem.setNeutralButton("OK", null);
+                        mensagem.show();
+                    } else if (etnota.getText().toString().equals("")) {
+                        AlertDialog.Builder mensagem = new AlertDialog.Builder(MainActivity.this);
+                        mensagem.setTitle("Atenção");
+                        mensagem.setMessage("O campo Nota deve ser preenchido");
+                        mensagem.setNeutralButton("OK", null);
+                        mensagem.show();
+                    } else {
+                        btincluirOnClick(v);
+                    }
+
+                return;
+                }
+            });
         btalterar.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                btalterarOnClick(v);
+                if (etnome_disciplina.getText().toString().equals("")) {
+                    AlertDialog.Builder mensagem = new AlertDialog.Builder(MainActivity.this);
+                    mensagem.setTitle("Atenção");
+                    mensagem.setMessage("O nome da disciplina deve ser preenchido");
+                    mensagem.setNeutralButton("OK", null);
+                    mensagem.show();
+                } else if (etnota.getText().toString().equals("")) {
+                    AlertDialog.Builder mensagem = new AlertDialog.Builder(MainActivity.this);
+                    mensagem.setTitle("Atenção");
+                    mensagem.setMessage("O campo Nota deve ser preenchido");
+                    mensagem.setNeutralButton("OK", null);
+                    mensagem.show();
+                } else {
+                    btalterarOnClick(v);
+                }
+
+                return;
             }
         });
+
         btexcluir.setOnClickListener(new View.OnClickListener(){
 
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {if (etnome_disciplina.getText().toString().equals("")) {
+                AlertDialog.Builder mensagem = new AlertDialog.Builder(MainActivity.this);
+                mensagem.setTitle("Atenção");
+                mensagem.setMessage("O nome da disciplina deve ser preenchido");
+                mensagem.setNeutralButton("OK", null);
+                mensagem.show();
+            } else if (etnota.getText().toString().equals("")) {
+                AlertDialog.Builder mensagem = new AlertDialog.Builder(MainActivity.this);
+                mensagem.setTitle("Atenção");
+                mensagem.setMessage("O campo Nota deve ser preenchido");
+                mensagem.setNeutralButton("OK", null);
+                mensagem.show();
+            } else {
                 btexcluirOnClick(v);
+            }
+
+                return;
             }
         });
         btpesquisar.setOnClickListener(new View.OnClickListener(){
