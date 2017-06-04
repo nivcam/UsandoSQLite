@@ -2,6 +2,7 @@ package com.example.nicolas.usandosqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -42,8 +43,8 @@ public class CriarBanco extends SQLiteOpenHelper {
         ContentValues registro = new ContentValues();
         registro.put("nome_disciplina", notas.getNomeDisciplina());
         registro.put("nota", notas.getNota());
-        banco.update("notas1", registro, "_id = ") +
-        notas.get_id(), null;
+        banco.update("notas1", registro, "_id = "
+                + notas.get_id(), null);
         banco.close();
     }
 
@@ -51,5 +52,23 @@ public class CriarBanco extends SQLiteOpenHelper {
         SQLiteDatabase banco = this.getWritableDatabase();
         banco.delete("notas1", "_id = ?", new String[]{String.valueOf(id)});
         banco.close();
+    }
+    public Notas pesquisarRegistro(int id){
+        SQLiteDatabase banco = this.getWritableDatabase();
+            Cursor registros = banco.query("notas1", null, "_id = " +
+                    id, null,null,null,null);
+            if(registros.moveToNext()){
+                String nomeDisciplina = registros.getString(registros.getColumnIndex("nome_disciplina"));
+                double nota = registros.getDouble(registros.getColumnIndex("nota"));
+
+                Notas notas = new Notas();
+                notas.set_id(id);
+                notas.setNomeDisciplina(nomeDisciplina);
+                notas.setNota(nota);
+                return notas;
+            }
+            else{
+                return null;
+            }
     }
 }
