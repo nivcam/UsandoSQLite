@@ -19,8 +19,8 @@ public class CriarBanco extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase banco) {
-        banco.execSQL("CREATE TABLE notas1 (_id INTEGER PRIMARY KEY AUTOINCLEMENT, " +
-                "nome_disciplina TEXT NOT NULL, nota DECIMAL NOT NULL");
+        banco.execSQL("CREATE TABLE notas1 (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "nome_disciplina TEXT NOT NULL, nota DECIMAL NOT NULL)");
 
     }
 
@@ -35,7 +35,7 @@ public class CriarBanco extends SQLiteOpenHelper {
         ContentValues registro = new ContentValues();
         registro.put("nome_disciplina", notas.getNomeDisciplina());
         registro.put("nota", notas.getNota());
-        banco.insert("nota1", null, registro);
+        banco.insert("notas1", null, registro);
         banco.close();
     }
     public void alterarRegistro (Notas notas){
@@ -70,5 +70,12 @@ public class CriarBanco extends SQLiteOpenHelper {
             else{
                 return null;
             }
+    }
+
+    public Cursor listarRegistros(){
+        SQLiteDatabase banco = this.getWritableDatabase();
+
+        Cursor registros = banco.query("notas1", null, null, null, null, null, null);
+        return registros;
     }
 }

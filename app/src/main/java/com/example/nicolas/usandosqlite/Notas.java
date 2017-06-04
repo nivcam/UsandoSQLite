@@ -1,5 +1,5 @@
 package com.example.nicolas.usandosqlite;
-class Notas {
+public class Notas {
     private int _id;
     private String nomeDisciplina;
     private double nota;
