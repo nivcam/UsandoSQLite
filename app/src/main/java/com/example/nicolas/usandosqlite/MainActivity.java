@@ -29,14 +29,27 @@ public class MainActivity extends AppCompatActivity {
         btexcluir = (Button) findViewById(R.id.btexcluir);
         btpesquisar = (Button) findViewById(R.id.btpesquisar);
         btlistar = (Button) findViewById(R.id.btlistar);
+        btincluir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btincluirOnClick(v);
+            }
+        });
     }
     public void btincluirOnClick(View v) {
-        ContentValues registro = new ContentValues();
+
+        Notas notas = new Notas();
+        notas.set_id(Integer.parseInt(etcodigo.getText().toString()));
+        CriarBanco criarBanco = new CriarBanco(this);
+        criarBanco.incluirRegistro(notas);
+        Toast.makeText(getApplicationContext(), "Incluido", Toast.LENGTH_SHORT).show();
+
+        /* ContentValues registro = new ContentValues();
         registro.put("nome_disciplina", etnome_disciplina.getText().toString());
         registro.put("nota", Double.parseDouble(etnota.getText().toString()));
         banco.insert("notas", null, registro);
         Toast.makeText(getApplicationContext(), "Sucesso!", Toast.LENGTH_SHORT).show();
-
+        */
     }
 
     public void btalterarOnClick(View v) {
